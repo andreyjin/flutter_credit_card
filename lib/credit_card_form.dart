@@ -270,7 +270,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
                 ),
               ],
             ),
-            if (enableCardHolderName) Container(
+            if (widget.enableCardHolderName) Container(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               margin: const EdgeInsets.only(left: 16, top: 8, right: 16),
               child: TextFormField(
