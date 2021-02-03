@@ -12,6 +12,7 @@ class CreditCardForm extends StatefulWidget {
     this.expiryDate,
     this.cardHolderName,
     this.cvvCode,
+    this.enableCardHolderName = false,
     this.obscureCvv = false,
     this.obscureNumber = false,
     @required this.onCreditCardModelChange,
@@ -50,6 +51,7 @@ class CreditCardForm extends StatefulWidget {
   final Color themeColor;
   final Color textColor;
   final Color cursorColor;
+  final bool enableCardHolderName;
   final bool obscureCvv;
   final bool obscureNumber;
   final GlobalKey<FormState> formKey;
@@ -268,7 +270,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
                 ),
               ],
             ),
-            Container(
+            if (enableCardHolderName) Container(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               margin: const EdgeInsets.only(left: 16, top: 8, right: 16),
               child: TextFormField(
